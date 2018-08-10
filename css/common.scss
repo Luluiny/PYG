@@ -1,31 +1,58 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-html,body{
+
+html,
+body {
     height: 100%;
 }
-body{
+
+body {
     padding: 45px 0 50px;
 }
-header{
+img{
+    width: 100%;
+    display: block;
+}
+header {
     height: 45px;
     width: 100%;
-    background-color: pink;
     position: fixed;
     top: 0;
     left: 0;
+    padding: 5px 10px;
 }
-footer{
+a{
+    color: inherit;
+}
+footer {
     height: 50px;
     width: 100%;
-    background-color: pink;
+    background-color: #fff;
     position: fixed;
     bottom: 0;
     left: 0;
+    display: flex;
+    >a {
+        flex: 1;
+        color: #000;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        flex-direction: column;
+        padding: 5px 0;
+        span:nth-child(1){
+            font-size: 22px;
+        }
+        span:nth-child(2){
+            font-size: 14px;
+        }
+    }
 }
-.view{
+
+.view {
     height: 100%;
     overflow: scroll;
 }

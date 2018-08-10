@@ -5,118 +5,127 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1,minimum-scale=1,user-scalable=no">
     <title>index.html</title>
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="/lib/mui/css/mui.css">
+    <link rel="stylesheet" href="/lib/fontawesome/css/font-awesome.css">
     <link rel="stylesheet" href="/css/common.css">
     <link rel="stylesheet" href="/css/inde.css">
 </head>
 
 <body>
-    <header></header>
+    <header>
+        <div class="mui-input-row mui-search">
+            <input type="search" class="mui-input-clear" placeholder="">
+        </div>
+    </header>
     <div class="view">
-        <ul>
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
-            <li>4</li>
-            <li>5</li>
-            <li>6</li>
-            <li>7</li>
-            <li>8</li>
-            <li>9</li>
-            <li>10</li>
-            <li>11</li>
-            <li>12</li>
-            <li>13</li>
-            <li>14</li>
-            <li>15</li>
-            <li>16</li>
-            <li>17</li>
-            <li>18</li>
-            <li>19</li>
-            <li>20</li>
-            <li>21</li>
-            <li>22</li>
-            <li>23</li>
-            <li>24</li>
-            <li>25</li>
-            <li>26</li>
-            <li>27</li>
-            <li>28</li>
-            <li>29</li>
-            <li>30</li>
-            <li>31</li>
-            <li>32</li>
-            <li>33</li>
-            <li>34</li>
-            <li>35</li>
-            <li>36</li>
-            <li>37</li>
-            <li>38</li>
-            <li>39</li>
-            <li>40</li>
-            <li>41</li>
-            <li>42</li>
-            <li>43</li>
-            <li>44</li>
-            <li>45</li>
-            <li>46</li>
-            <li>47</li>
-            <li>48</li>
-            <li>49</li>
-            <li>50</li>
-            <li>51</li>
-            <li>52</li>
-            <li>53</li>
-            <li>54</li>
-            <li>55</li>
-            <li>56</li>
-            <li>57</li>
-            <li>58</li>
-            <li>59</li>
-            <li>60</li>
-            <li>61</li>
-            <li>62</li>
-            <li>63</li>
-            <li>64</li>
-            <li>65</li>
-            <li>66</li>
-            <li>67</li>
-            <li>68</li>
-            <li>69</li>
-            <li>70</li>
-            <li>71</li>
-            <li>72</li>
-            <li>73</li>
-            <li>74</li>
-            <li>75</li>
-            <li>76</li>
-            <li>77</li>
-            <li>78</li>
-            <li>79</li>
-            <li>80</li>
-            <li>81</li>
-            <li>82</li>
-            <li>83</li>
-            <li>84</li>
-            <li>85</li>
-            <li>86</li>
-            <li>87</li>
-            <li>88</li>
-            <li>89</li>
-            <li>90</li>
-            <li>91</li>
-            <li>92</li>
-            <li>93</li>
-            <li>94</li>
-            <li>95</li>
-            <li>96</li>
-            <li>97</li>
-            <li>98</li>
-            <li>99</li>
-            <li>100</li>
-        </ul>
-    </div>
-    <footer></footer>
-</body>
+        <!-- 轮播图 -->
+        <div class="slider">
+            <div class="mui-slider">
 
+                <!-- 轮播图占坑 -->
+
+            </div>
+        </div>
+        <!-- 首页导航 -->
+        <div class="index_nav">
+            
+        </div>
+        <!-- 商品列表 -->
+        <div class="goodlist">
+
+        </div>
+    </div>
+    <footer>
+        <a href="javascript:;">
+            <span class="fa fa-home"></span>
+            <span>首页</span>
+        </a>
+        <a href="/page/category.html">
+            <span class="fa fa-list-ul"></span>
+            <span>分类</span>
+        </a>
+        <a href="javascript:;">
+            <span class="fa fa-shopping-cart"></span>
+            <span>首页</span>
+        </a>
+        <a href="javascript:;">
+            <span class="fa fa-user"></span>
+            <span>首页</span>
+        </a>
+    </footer>
+</body>
+<script src="/lib/mui/js/mui.js"></script>
+<script src="/lib/arttemplate/template-web.js"></script>
+<script src="/lib/zepto/zepto.js"></script>
+<script src="/js/common.js"></script>
+<script src="/js/index.js"></script>
+<!-- 轮播图模板 -->
+<script type="text/template" id="tempslider">
+    <div class="mui-slider-group mui-slider-loop">
+        <!--支持循环，需要重复图片节点-->
+        <div class="mui-slider-item mui-slider-item-duplicate">
+            <a href="#">
+                <img src="{{data[data.length-1].image_src}}" />
+            </a>
+        </div>
+        {{each data value index}}
+        <div class="mui-slider-item">
+            <a href="#">
+                <img src="{{value.image_src}}">
+            </a>
+        </div>
+        {{/each}}
+        <!--支持循环，需要重复图片节点-->
+        <div class="mui-slider-item mui-slider-item-duplicate">
+            <a href="#">
+                <img src="{{data[0].image_src}}" />
+            </a>
+        </div>
+    </div>
+
+    <!-- 索引器 -->
+    <div class="mui-slider-indicator">
+        {{each data value index}} {{if index==0}}
+        <div class="mui-indicator mui-active"></div>
+        {{/if}} {{if index!=0}}
+        <div class="mui-indicator"></div>
+        {{/if}} {{/each}}
+    </div>
+
+</script>
+<!-- 首页导航模板 -->
+<script type="text/template" id="tempnav">
+    {{each data value index}}
+    <a href="javascript:;">
+            <img src="{{value.image_src}}" alt="">
+        </a>
+{{/each}}
+</script>
+<!-- 首页列表模板 -->
+<script type="text/template" id="tempcontent">
+{{each data value index}}
+
+            <div class="goods_group">
+                <div class="goodstitle">
+                    <img src="{{value.group_img}}" alt="">
+                </div>
+                <ul class="goodscontent">
+                    {{each value.goods value2 index2}}
+                    <li>
+                        <a href="javascript:;" class="item_des">
+                            <img src="{{value2.goods_small_logo}}" alt="">
+                            <div class="goods_name">{{value2.goods_name}}</div>
+                            <div class="goods_price">￥ {{value2.goods_price}}</div>
+                        </a>
+                        <div class="item_like">
+                            <a href="javascript:;" class=" mui-btn mui-btn-primary mui-btn-outlined">
+                                找相似
+                            </a>
+                        </div>
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
+{{/each}}
+</script>
 </html>

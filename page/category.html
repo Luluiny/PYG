@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1,minimum-scale=1,user-scalable=no">
+    <title>category.html</title>
+    <link rel="stylesheet" href="/lib/mui/css/mui.css">
+    <link rel="stylesheet" href="/lib/fontawesome/css/font-awesome.css">
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/category.css">
+</head>
+
+<body>
+    <header>
+        <div class="mui-input-row mui-search">
+            <input type="search" class="mui-input-clear" placeholder="">
+        </div>
+    </header>
+    <div class="view">
+        <div class="left">
+           <ul class="cateleft">
+
+           </ul>
+        </div>
+        <div class="right">
+            <ul class="cateright">
+
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <a href="/index.html">
+            <span class="fa fa-home"></span>
+            <span>首页</span>
+        </a>
+        <a href="javascript:;">
+            <span class="fa fa-list-ul"></span>
+            <span>首页</span>
+        </a>
+        <a href="javascript:;">
+            <span class="fa fa-shopping-cart"></span>
+            <span>首页</span>
+        </a>
+        <a href="javascript:;">
+            <span class="fa fa-user"></span>
+            <span>首页</span>
+        </a>
+    </footer>
+
+</body>
+<script src="/lib/mui/js/mui.js"></script>
+<script src="/lib/arttemplate/template-web.js"></script>
+<script src="/lib/iscroll/iscroll.js"></script>
+<script src="/lib/zepto/zepto.js"></script>
+<script src="/js/common.js"></script>
+<script src="/js/category.js"></script>
+<script type="text/template" id="tempcateleft">
+{{each data value index}}
+<li>{{value.cat_name}}</li>
+{{/each}}
+</script>
+<script type="text/template" id="tempcateright">
+{{each data value index }}
+{{each value.children value2 index2}}
+
+{{/each}}
+{{/each}}
+</script>
+</html>

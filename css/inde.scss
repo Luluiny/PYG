@@ -1,0 +1,48 @@
+.index_nav{
+    display: flex;
+    a{
+        flex: 1;
+        padding: 5px 0;
+        img{
+            width: 75%;
+            margin: 0 auto;
+        }
+    }
+}
+.goodlist{
+    padding: 0 10px;
+    .goods_group{
+        .goodstitle{
+            margin-bottom: 6px;
+        }
+        .goodscontent{
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            >li{
+                width: 49%;
+                background-color: #fff;
+                color: #000;
+                font-size: 14px;
+                padding: 5px;
+                margin-bottom: 5px;
+                .goods_name{
+                    height: 40px;
+                    overflow: hidden;
+                }
+                .goods_price{
+                    color: red;
+                    font-size: 16px;
+                }
+                .item_like{
+                    text-align: center;
+                    a{
+                        display: inline-block;
+                        width: 70%;
+                    }
+                }
+            }
+        }
+    }
+}
