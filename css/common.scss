@@ -1,0 +1,31 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body{
+    height: 100%;
+}
+body{
+    padding: 45px 0 50px;
+}
+header{
+    height: 45px;
+    width: 100%;
+    background-color: pink;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+footer{
+    height: 50px;
+    width: 100%;
+    background-color: pink;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+.view{
+    height: 100%;
+    overflow: scroll;
+}
