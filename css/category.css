@@ -15,6 +15,7 @@ body {
   display: -ms-flexbox;
   display: flex;
   overflow: hidden;
+  height: 100%;
 }
 
 .view .left {
@@ -26,16 +27,75 @@ body {
 }
 
 .view .left .cateleft > li {
-  background-color: #cc1144;
+  background-color: #ccc;
   text-align: center;
   font-size: .14rem;
+  padding: 8px 0;
+}
+
+.view .left .cateleft .active {
+  border-left: 3px solid #0094ff;
 }
 
 .view .right {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  overflow: scroll;
-  background-color: aqua;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.view .right .goods_group {
+  font-size: .14rem;
+}
+
+.view .right .goods_group .goods_title {
+  color: pink;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-right: 20px;
+}
+
+.view .right .goods_group .goods_title > span:nth-child(1) {
+  font-size: .16rem;
+  padding: .15rem;
+}
+
+.view .right .goods_group .goods_title > span:nth-child(2) {
+  background-color: #000000;
+  height: 1px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.view .right .cateright {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  list-style: none;
+}
+
+.view .right .cateright li {
+  width: 33.3%;
+  text-align: center;
+}
+
+.view .right .cateright li a {
+  color: #000;
+}
+
+.view .right .cateright li a img {
+  width: 60%;
+  margin: 0 auto;
 }
 /*# sourceMappingURL=category.css.map */

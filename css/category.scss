@@ -11,6 +11,7 @@ body{
     */
     display: flex;
     overflow: hidden;
+    height: 100%;
     .left{
         width: 1rem;
         height: 100%;
@@ -20,15 +21,54 @@ body{
         color: #Fff;
         .cateleft{
             >li{
-                background-color: #cc1144;
+                background-color: #ccc;
                 text-align: center;
                 font-size:.14rem;
+                padding: 8px 0;
+            }
+            .active{
+                border-left: 3px solid #0094ff;
             }
         }
     }
     .right{
         flex: 1;
-        overflow: scroll;
-        background-color: aqua;
+        overflow: hidden;
+        background-color: #fff;
+        .goods_group{
+            font-size: .14rem;
+            .goods_title{
+                color: pink;
+                display: flex;
+                justify-content: space-between;
+                padding-right: 20px;
+                >span:nth-child(1){
+                    font-size: .16rem;
+                    padding: .15rem;
+                }
+                >span:nth-child(2){
+                    background-color: #000000 ;
+                    height: 1px;
+                    flex: 1;
+                    align-self: center;
+                }
+            }
+        }
+        .cateright{
+            display: flex;
+            flex-wrap: wrap;
+            list-style: none;
+            li{ 
+                width:33.3%;
+                text-align: center;
+                a{
+                    color: #000;
+                    img{
+                        width: 60%;
+                        margin: 0 auto;
+                    }
+                }
+            }
+        }
     }
 }

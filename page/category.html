@@ -19,14 +19,12 @@
     </header>
     <div class="view">
         <div class="left">
-           <ul class="cateleft">
-
-           </ul>
-        </div>
-        <div class="right">
-            <ul class="cateright">
+            <ul class="cateleft">
 
             </ul>
+        </div>
+        <div class="right">
+            
         </div>
     </div>
 
@@ -57,15 +55,38 @@
 <script src="/js/common.js"></script>
 <script src="/js/category.js"></script>
 <script type="text/template" id="tempcateleft">
-{{each data value index}}
-<li>{{value.cat_name}}</li>
-{{/each}}
+    {{each data value index}} 
+    {{if index==0}}
+    <li class="active" data-index="{{index}}">{{value.cat_name}}</li>
+    {{/if}} 
+    {{if index!=0}}
+    <li data-index="{{index}}">{{value.cat_name}}</li>
+    {{/if}}
+     {{/each}}
 </script>
 <script type="text/template" id="tempcateright">
-{{each data value index }}
-{{each value.children value2 index2}}
-
-{{/each}}
-{{/each}}
+    <div>
+    {{each data value index }} 
+        <div class="goods_group">
+            <div class="goods_title">
+                <span>{{value.cat_name}}</span>
+                <span></span>
+            </div>
+            <ul class="cateright">
+                {{each value.children value2 index2}}
+                <li>
+                    <a href="/page/goodlist.html">
+                        <img src="{{ $imports.iconUrl}}{{value2.cat_icon}}" alt="">
+                        <div>{{value2.cat_name}}</div>
+                    </a>
+                </li>
+                {{/each}}
+            </ul>
+        </div> 
+        {{/each}}
+    </div>
+    
+   
 </script>
+
 </html>
