@@ -1,6 +1,7 @@
 @charset "UTF-8";
 body {
   line-height: normal;
+  padding: 45px 0 50px;
 }
 
 .view {

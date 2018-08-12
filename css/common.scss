@@ -7,11 +7,10 @@
 html,
 body {
     height: 100%;
+    width: 100%;
 }
 
-body {
-    padding: 45px 0 50px;
-}
+
 img{
    // width: 100%;
     display: block;
@@ -56,3 +55,63 @@ footer {
     height: 100%;
     overflow: scroll;
 }
+// 使用伪元素实现遮罩层
+// .wait{
+//     //遮罩层
+//     &::before{
+//         content: "";
+//         position: fixed;
+//         top: 0;
+//         left: 0;
+//         width: 100%;
+//         height: 100%;
+//         background-color: red;
+//         opacity: .8;
+//         z-index: 123;
+//     }
+//     //图标
+//     &::after{
+//         animation: fa-spin 2s infinite linear;
+//         display: inline-block;
+//         font: normal normal normal 14px/1 FontAwesome;
+//         font-size: 78px;
+//         text-rendering: auto;
+//         -webkit-font-smoothing: antialiased;
+//         content: "\f110";
+//         position: fixed;
+//         top: 50%;
+//         left: 50%;
+//         color: pink;
+//         z-index: 321;
+//     }
+// }
+.wait{ 
+    &::before {
+      content: "";
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-color: #fff;
+      opacity: .7;
+      z-index: 1000;
+    } // 页面加载中的小图标
+    &::after {
+      animation: fa-spin 2s infinite linear;
+      display: inline-block;
+      font: normal normal normal 14px/1 FontAwesome;
+      font-size: 70px;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+      content: "\f110";
+      position: fixed;
+      top: 30%;
+      left: 50%;
+      margin-left: -35px;
+      z-index: 1001;
+      color: #333; 
+    }
+    // background-color: red;
+    // padding: 100px;
+  }

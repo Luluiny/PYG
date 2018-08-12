@@ -1,0 +1,80 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+img{
+    width: 100%;
+    display: block;
+}
+a{
+    color: inherit;
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+}
+body{
+    padding-top: 90px;
+    padding-bottom: 50px;
+}
+.search{
+    height: 45px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #999;
+}
+header{
+    height: 45px;
+    width: 100%;
+    background-color: pink;
+    display: flex;
+    position: fixed;
+    top: 45px;
+    left: 0;
+    a{
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+.view{
+    padding: 0 10px;
+    position: relative;
+    ul{
+        li{
+            background-color: #fff;
+            a{
+                display: flex;
+                font-size: 14px;
+                .item_left{
+                    flex: 1;
+                    img{
+                        margin: 0 auto;
+                        width: 70%;
+                    }
+                }
+                .item_right{
+                    flex: 2;
+                    overflow: hidden;
+                    padding: 15px 0;
+                    .goods_name{
+                        overflow: hidden;
+                        //不要换行 flex布局当宽度超过父元素的宽度之后 会发生挤压
+                        white-space: nowrap;
+                        //文字超出之后 让最后一个文字变成省略号
+                        text-overflow: ellipsis;
+                    }
+                    .goods_price{
+                        color: red;
+                        font-size: 18px;
+
+                    }
+                }
+            }
+        }
+    }
+}
