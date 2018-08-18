@@ -75,7 +75,7 @@
             <ul class="cateright">
                 {{each value.children value2 index2}}
                 <li>
-                    <a href="/page/goodlist.html">
+                    <a href="/page/goodlist.html?cid={{value2.cat_id}}">
                         <img src="{{ $imports.iconUrl}}{{value2.cat_icon}}" alt="">
                         <div>{{value2.cat_name}}</div>
                     </a>

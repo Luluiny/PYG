@@ -2,14 +2,17 @@
      //查询参数
      var QueryObj={
          query:"",
-         cid:getValue("cid"),
+         cid:$.getValue("cid"),
          pagenum:1,
          pagesize:6
      };
+     console.log(QueryObj.cid);
      //总页数
      var totalPage=1;
      init();
+    
      function init(){
+        eventList();
         mui.init({
             pullRefresh: {
               container: ".view",
@@ -51,14 +54,14 @@
           });
      }
     
-    
-     //根据 url上的key来获取值
-     function getValue(name){
-        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
-        var r = window.location.search.substr(1).match(reg);
-        if (r != null) return decodeURI(r[2]);
-        return null;
+     //由于zepto的默认样式阻止了a标签的默认跳转  所以我们要手动的给a标签绑定tap事件 
+     function eventList(){
+         $(".view").on("tap","a",function(){
+             var href=this.href;
+             location.href=href;
+         })
      }
+    
 
       
       //获取数据列表
@@ -66,6 +69,7 @@
       function search(callback){
         $.get("goods/search",QueryObj,function(ret){
             //总页数
+            console.log(QueryObj);
             totalPage=Math.ceil(ret.data.total/QueryObj.pagesize);
             var html=template("mainTpl",{arr:ret.data.goods});
             //为了加载下一页 不断地去append追加

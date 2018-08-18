@@ -1,0 +1,29 @@
+ body{
+     padding-top: 60px;
+ }
+ .view{
+     padding: 0 10px;
+ }
+ .mui-input-group{
+     input{
+         font-size: 14px;
+     }
+     .code-row{
+         position: relative;
+        #code_btn{
+            position: absolute;
+            top: 0;
+            right: 5px;
+            width: auto;
+        }
+     }
+   
+ }
+ .btn_tools{
+    display: flex;
+    padding: 10px;
+    >button{
+        width: 50%;
+        padding: 10px 0;
+    }
+}

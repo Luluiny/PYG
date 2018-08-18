@@ -1,0 +1,35 @@
+body {
+  padding-top: 60px;
+}
+
+.view {
+  padding: 0 10px;
+}
+
+.mui-input-group input {
+  font-size: 14px;
+}
+
+.mui-input-group .code-row {
+  position: relative;
+}
+
+.mui-input-group .code-row #code_btn {
+  position: absolute;
+  top: 0;
+  right: 5px;
+  width: auto;
+}
+
+.btn_tools {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 10px;
+}
+
+.btn_tools > button {
+  width: 50%;
+  padding: 10px 0;
+}
+/*# sourceMappingURL=register.css.map */

@@ -21,4 +21,46 @@ $(function(){
             $("body").removeClass("wait");
         }
     }
+
+    //拓展zeptob 给$对象添加自定义的属性或者方法
+    $.extend($,{
+        checkPhone:function (phone) {
+            if (!(/^1[34578]\d{9}$/.test(phone))) {
+                return false;
+            } else {
+                return true;
+            }
+        },
+        checkEmail:function (myemail) {　　
+            var myReg = /^[a-zA-Z0-9_-]+@([a-zA-Z0-9]+\.)+(com|cn|net|org)$/;
+            if (myReg.test(myemail)) {　　　　
+                return true;　　
+            } else {　　　　
+                return false;
+            }
+        },
+        
+     //根据 url上的key来获取值
+        getValue:function (name){
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+            var r = window.location.search.substr(1).match(reg);
+            if (r != null) return decodeURI(r[2]);
+            return null;
+     },
+     token: function () {
+        // 如果userinfo 存在 返回token 否则就返回 ""
+        var token;
+        if (!localStorage.getItem("userinfo")) {
+          token = "";
+        } else {
+          token = JSON.parse(localStorage.getItem("userinfo")).token;
+        }
+        return token;
+      },
+     ckeckLogin:function(){
+         //判断登录只要判断本地存储中是否有token
+         return localStorage.getItem("userinfo");
+     }
+    });
+
 })

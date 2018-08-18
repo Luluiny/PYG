@@ -29,7 +29,7 @@ $(function(){
 
     function getCategories(){
         $.get("categories",function(res){
-            //console.log(res);
+            console.log(res);
             var html=template("tempcateleft",{data:res.data});
             $(".cateleft").html(html);
             //只有容器元素的第一个子元素可以滚动 其他被忽略
